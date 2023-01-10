@@ -12,26 +12,35 @@
 </head>
 <body>
     
-<div>
+<div class="container">
+    <div>
 <label for="input" size="100">Enter String : </label>
-<input type="text" class="inputString" placeholder="Enter String">
-<button onclick="func()">Segregate</button>
-<br>
+<input type="text" class="inputString" placeholder="Enter Names">
+<button onclick="func()">Insert Names</button>
+</div>
+<label for="input" size="100">Enter New Names : </label>
+<input type="text" class="inputString" placeholder="Enter New Names">
+<label for="input" >Enter Index Position : </label>
+<input type="number" class="inputString" placeholder="Enter Position">
 
+<button onclick="newNames()">Insert New Names</button>
+<br>
+<button onclick="sort()">Sort</button>
+<br>
 <p id="display" class="Answer" >Answer</p>
 <div>
-    Positives
-<ul id="lists1">
+    After Insertion
+<ol type="a" id="lists1">
 
-</ul>
-Negatives
-<ul id="lists2">
+</ol>
+Sorted 
+<ol type="a" id="lists2">
 
-</ul>
+</ol>
 
 </div>
 <br>
-<a href="../assignment1/index.html">Assignment 5</a>
+<a href="">Last</a>
 </div>
 
 
