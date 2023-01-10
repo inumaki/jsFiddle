@@ -1,29 +1,42 @@
 
-var inputString = document.getElementsByClassName("inputString");
+var inputNumber = document.getElementsByClassName("inputNumber");
 var answer = document.getElementById("display");
-var lists = document.getElementById("lists");
 
 
 
-function func()
+function js_Sort()
 {
 
-  var text= inputString[0].value;
-  const myArray = text.split("#");
+var arr=[];
+var ans = true;
 
-  console.log(lists)
-
-
-while (lists.firstChild) {
-    lists.removeChild(lists.firstChild);
-}
-for(var i=0;i<myArray.length;i++)
+if( inputNumber[0].value.length===0 || inputNumber[1].value.length===0 ||inputNumber[2].value.length===0)
 {
-var node=document.createElement("LI");
-var textnode=document.createTextNode(myArray[i]);
-node.appendChild(textnode);
-lists.appendChild(node);
+alert('Please input number in each input field');
+return ;
 }
+if(isNaN(inputNumber[0].value) || isNaN(inputNumber[1].value) || isNaN(inputNumber[2].value))
+{
+alert('Please input numbers instead of string');
+return ;
+}
+
+for(var i=0;i<inputNumber.length;i++)
+    arr.push(inputNumber[i].value);
+
+arr= arr.map((item)=>{return Number(item)});
+
+var Narr= arr.sort((a, b) => a - b);
+console.log(Narr);
+var str="Answer = ";
+
+console.log(Narr);
+for(var i=0;i<arr.length;i++)
+  str+=" "+Narr[i]+ "     ";
+
+
+answer.innerHTML= str;
+
 
 
 
