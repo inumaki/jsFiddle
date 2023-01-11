@@ -8,7 +8,8 @@ function checkPalindrome()
 {
 
 var ans=true;
-var str= inputString[0].value;
+var str= inputString[0].value.trim();
+
 
 if(str.length===0)
 {
@@ -17,6 +18,7 @@ return ;
 
 }
 var low=0,high=str.length-1;
+str= str.toUpperCase();
 while(low<=high)
 {
 if(str[low]!=str[high])
