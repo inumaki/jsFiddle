@@ -1,8 +1,10 @@
 
 var inputString = document.getElementsByClassName("inputString");
 var answer = document.getElementById("display");
-var lists = document.getElementById("lists1");
-var lists = document.getElementById("lists2");
+var lists1 = document.getElementById("lists1");
+var lists2 = document.getElementById("lists2");
+var myArr=[];
+
 function createNode(value)
 {
 
@@ -14,58 +16,65 @@ return node;
 
 
 }
+function addlist1()
+{
+  while (lists1.firstChild) {
+    lists1.removeChild(lists1.firstChild);
+  }
+  for(var i=0;i<myArr.length;i++)
+  {
+   var node=  createNode(myArr[i]);
+  lists1.appendChild(node);
+  }
+}
 
 function func()
 {
 
-  var text= inputString[0].value;
-  const myArray = text.split(",");
-  console.log(lists)
+var namesString= inputString[0].value;
+myArr= namesString.split(",");
+addlist1();
 
 
-while (lists1.firstChild) {
-    lists1.removeChild(lists1.firstChild);
+
+
+
 }
+
+function newNames()
+{
+
+var pos= Number(inputString[2].value);
+
+var namesString= inputString[1].value;
+var tempArr= namesString.split(",");
+console.log(tempArr)
+myArr.splice(pos,0,...tempArr);
+
+myArr = myArr.filter((value,index)=> myArr.indexOf(value)===index);
+
+console.log(myArr);
+addlist1();
+}
+
+function sort()
+{
+
+
+tempArr= myArr.sort();
 while (lists2.firstChild) {
   lists2.removeChild(lists2.firstChild);
 }
-
-var psum=0,nsum=0,count=0;
-var node;
-for(var i=0;i<myArray.length;i++)
+for(var i=0;i<myArr.length;i++)
 {
-  myArray[i]= Number(myArray[i]);
- node = createNode(myArray[i]);
-
-  if(myArray[i]>=0){
-count++;
-
-lists1.appendChild(node);
-psum+=myArray[i];
-  }
-else
-{
-  nsum+=myArray[i];
-  lists2.appendChild(node);
-}
-
-}
-if(count>0)
-{
-node= createNode(psum);
-lists1.appendChild(node);
-node= createNode(psum/count);
-lists1.appendChild(node);
-}
-if(myArray.length-count>0)
-{
-node= createNode(nsum);
-lists2.appendChild(node);
-node= createNode(nsum/(myArray.length-count));
+ var node=  createNode(tempArr[i]);
 lists2.appendChild(node);
 }
 
+
+
 }
+
 
 
 
