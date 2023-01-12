@@ -10,6 +10,7 @@ function isPrime(n) {
   }
   return true;
 }
+
 ////////////////////////////////////////////////////////////////////////
 function generateNumbers() {
   numbers.clear();
@@ -17,11 +18,15 @@ function generateNumbers() {
   if (Number(num) < 1 || Number(num) > 10000) alert("Please Enter In Range");
   var i = 0;
   while (i < num) {
-    var value = Math.floor(Math.random() * 10000) + 1;
+    var value = Math.floor(Math.random() *10000) + 1;
     console.log(value);
     numbers.add(value);
     i = numbers.size;
+
   }
+  numbers.add(17);
+  numbers.add(29);
+  numbers.add(59);
   let rNumbers = document.getElementById("random");
 
   rNumbers.innerHTML = "";

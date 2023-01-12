@@ -1,0 +1,21 @@
+body
+{
+    margin: 25px;
+    height: 90%;
+    width: 90%;
+}
+.card
+{
+
+    max-width: 50%;
+    margin: 25px;
+}
+
+
+
+.alert {
+width: 25%;
+height: fit-content;
+  }
+  
+  /* The close button */

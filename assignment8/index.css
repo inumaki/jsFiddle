@@ -1,0 +1,29 @@
+body
+{
+
+    height: 90%;
+    width: 90%;
+    margin:25px;
+  
+
+
+}
+
+input
+{
+    margin:10px;
+}
+button
+{
+    margin-top: 10px;
+}
+.card
+{
+    margin-top: 25px;
+    max-width: 500px;
+}
+.alert
+{
+    max-width: 40%;
+
+}
